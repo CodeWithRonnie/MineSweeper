@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ROWS = 10;
-const COLS = 12;
+const ROWS = 5;  // Reduced for testing
+const COLS = 5;   // Reduced for testing
 const TILE_COUNT = ROWS * COLS;
-const MINE_COUNT = 20;
+const MINE_COUNT = 2;  // Only 2 mines for testing
 
 class Minesweeper extends React.Component {
   constructor(props) {
