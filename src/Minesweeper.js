@@ -371,7 +371,7 @@ Minesweeper
               padding: '2px 0',
               textShadow: (gameWon || gameOver) ? '0 0 5px rgba(255, 105, 180, 0.3)' : 'none'
             }}>
-              {gameWon ? '🎉 You Win!' : gameOver ? '💔 Game Over' : '🌸 Find all the mines!'}
+              {gameWon ? 'You Win!' : gameOver ? 'Game Over' : 'Find all the mines'}
             </div>
             <div style={{
               background: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
