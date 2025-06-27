@@ -1,12 +1,16 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = "build"
+  ignore = "git diff --quiet HEAD^ HEAD -- ."
 
 [build.environment]
   NODE_VERSION = "18.0.0"
   NPM_VERSION = "9.0.0"
+  CI = "false"
+  DISABLE_ESLINT_PLUGIN = "true"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
