@@ -1,10 +1,10 @@
 import React from 'react';
 
-// Standard beginner level: 9x9 grid with 10 mines
-const ROWS = 9;
-const COLS = 9;
+// Custom level: 10x10 grid with 8 mines
+const ROWS = 10;
+const COLS = 10;
 const TILE_COUNT = ROWS * COLS;
-const MINE_COUNT = 10;  // Standard beginner level
+const MINE_COUNT = 8;  // Fewer mines for a 10x10 grid
 
 class Minesweeper extends React.Component {
   constructor(props) {
