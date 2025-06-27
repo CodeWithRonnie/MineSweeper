@@ -326,6 +326,7 @@ class Minesweeper extends React.Component {
           marginTop: '0',
           letterSpacing: '1px'
         }}>Minesweeper</h1>
+        
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -335,134 +336,134 @@ class Minesweeper extends React.Component {
           borderRadius: '12px',
           boxShadow: '0 2px 5px rgba(255, 105, 180, 0.1)'
         }}>
-            <div style={{
-              background: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
-              color: 'white',
-              padding: '4px 12px',
-              borderRadius: '15px',
-              fontWeight: 'bold',
-              minWidth: '70px',
-              textAlign: 'center',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-            }}>
-              ⏱️ {formattedTime}
-            </div>
-            <div style={{
-              fontSize: '1.1em',
-              color: gameWon ? '#ff69b4' : gameOver ? '#ff1493' : '#ff69b4',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              flexGrow: 1,
-              padding: '2px 0',
-              textShadow: (gameWon || gameOver) ? '0 0 5px rgba(255, 105, 180, 0.3)' : 'none'
-            }}>
-              {gameWon ? 'You Win!' : gameOver ? 'Game Over' : 'Find all the mines'}
-            </div>
-            <div style={{
-              background: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
-              color: 'white',
-              padding: '4px 12px',
-              borderRadius: '15px',
-              fontWeight: 'bold',
-              minWidth: '70px',
-              textAlign: 'center',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-            }}>
-              🚩 {flagsLeft < 0 ? 0 : flagsLeft}
-            </div>
-          </div>
-          
           <div style={{
-            position: 'relative',
-            display: 'grid',
-            gridTemplateColumns: `repeat(${COLS}, 26px)`,
-            gap: '3px',
-            padding: '12px',
-            backgroundColor: '#fff0f7',
-            borderRadius: '10px',
-            boxShadow: 'inset 0 0 10px rgba(255, 105, 180, 0.1)',
-            border: '1px solid #ffd1dc',
-            margin: '0 auto'
-          }}>
-            {board.map(this.renderTile)}
-            {this.state.showGameOver && (
-              <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '8px',
-                zIndex: 10
-              }}>
-                <div style={{
-                  fontSize: '24px',
-                  fontWeight: 'bold',
-                  color: this.state.gameResult === 'win' ? '#4CAF50' : '#F44336',
-                  marginBottom: '20px',
-                  textAlign: 'center',
-                  padding: '0 20px'
-                }}>
-                  {this.state.gameResult === 'win' ? 'You Won!' : 'Game Over!'}
-                </div>
-                <div style={{
-                  fontSize: '16px',
-                  marginBottom: '10px',
-                  textAlign: 'center',
-                  color: '#555'
-                }}>
-                  {this.state.gameResult === 'win' 
-                    ? `You won in ${Math.floor((1800 - this.state.time) / 60)}:${String((1800 - this.state.time) % 60).padStart(2, '0')}`
-                    : 'Click New Game to try again'
-                  }
-                </div>
-              </div>
-            )}
-          </div>
-          
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <button 
-              onClick={this.resetGame}
-              style={{
-                padding: '10px 25px',
-                fontSize: '16px',
-                backgroundColor: '#ff69b4',
-                color: 'white',
-                border: 'none',
-                borderRadius: '25px',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-                transition: 'all 0.2s ease',
-                ':hover': {
-                  backgroundColor: 'white',
-                  color: '#ff69b4',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 4px 8px rgba(255,105,180,0.3)'
-                },
-                ':active': {
-                  transform: 'translateY(0)'
-                }
-              }}
-            >
-              New Game
-            </button>
-          </div>
-          
-          <div style={{
-            marginTop: '15px',
-            fontSize: '0.9em',
-            color: '#7f8c8d',
+            background: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
+            color: 'white',
+            padding: '4px 12px',
+            borderRadius: '15px',
+            fontWeight: 'bold',
+            minWidth: '70px',
             textAlign: 'center',
-            fontStyle: 'italic'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
           }}>
-            Left-click to reveal • Right-click to flag
+            ⏱️ {formattedTime}
           </div>
+          <div style={{
+            fontSize: '1.1em',
+            color: gameWon ? '#ff69b4' : gameOver ? '#ff1493' : '#ff69b4',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            flexGrow: 1,
+            padding: '2px 0',
+            textShadow: (gameWon || gameOver) ? '0 0 5px rgba(255, 105, 180, 0.3)' : 'none'
+          }}>
+            {gameWon ? 'You Win!' : gameOver ? 'Game Over' : 'Find all the mines'}
+          </div>
+          <div style={{
+            background: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
+            color: 'white',
+            padding: '4px 12px',
+            borderRadius: '15px',
+            fontWeight: 'bold',
+            minWidth: '70px',
+            textAlign: 'center',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+          }}>
+            🚩 {flagsLeft < 0 ? 0 : flagsLeft}
+          </div>
+        </div>
+        
+        <div style={{
+          position: 'relative',
+          display: 'grid',
+          gridTemplateColumns: `repeat(${COLS}, 26px)`,
+          gap: '3px',
+          padding: '12px',
+          backgroundColor: '#fff0f7',
+          borderRadius: '10px',
+          boxShadow: 'inset 0 0 10px rgba(255, 105, 180, 0.1)',
+          border: '1px solid #ffd1dc',
+          margin: '0 auto',
+          justifyContent: 'center'
+        }}>
+          {board.map(this.renderTile)}
+          {this.state.showGameOver && (
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '8px',
+              zIndex: 10
+            }}>
+              <div style={{
+                fontSize: '24px',
+                fontWeight: 'bold',
+                color: this.state.gameResult === 'win' ? '#4CAF50' : '#F44336',
+                marginBottom: '20px',
+                textAlign: 'center',
+                padding: '0 20px'
+              }}>
+                {this.state.gameResult === 'win' ? 'You Won!' : 'Game Over!'}
+              </div>
+              <div style={{
+                fontSize: '16px',
+                marginBottom: '10px',
+                textAlign: 'center',
+                color: '#555'
+              }}>
+                {this.state.gameResult === 'win' 
+                  ? `You won in ${Math.floor((1800 - this.state.time) / 60)}:${String((1800 - this.state.time) % 60).padStart(2, '0')}`
+                  : 'Click New Game to try again'
+                }
+              </div>
+            </div>
+          )}
+        </div>
+        
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <button 
+            onClick={this.resetGame}
+            style={{
+              padding: '10px 25px',
+              fontSize: '16px',
+              backgroundColor: '#ff69b4',
+              color: 'white',
+              border: 'none',
+              borderRadius: '25px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+              transition: 'all 0.2s ease',
+              ':hover': {
+                backgroundColor: 'white',
+                color: '#ff69b4',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 4px 8px rgba(255,105,180,0.3)'
+              },
+              ':active': {
+                transform: 'translateY(0)'
+              }
+            }}
+          >
+            New Game
+          </button>
+        </div>
+        
+        <div style={{
+          marginTop: '15px',
+          fontSize: '0.9em',
+          color: '#7f8c8d',
+          textAlign: 'center',
+          fontStyle: 'italic'
+        }}>
+          Left-click to reveal • Right-click to flag
         </div>
       </div>
     );
