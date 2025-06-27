@@ -155,7 +155,6 @@ class Minesweeper extends React.Component {
     
     // Count revealed tiles for win condition
     const revealedCount = newBoard.filter(tile => tile.isRevealed).length;
-    const nonMineTiles = TILE_COUNT - MINE_COUNT;
     
     const won = this.checkWinCondition(newBoard);
     
