@@ -1,9 +1,10 @@
 import React from 'react';
 
-const ROWS = 5;  // Reduced for testing
-const COLS = 5;   // Reduced for testing
+// Standard beginner level: 9x9 grid with 10 mines
+const ROWS = 9;
+const COLS = 9;
 const TILE_COUNT = ROWS * COLS;
-const MINE_COUNT = 2;  // Only 2 mines for testing
+const MINE_COUNT = 10;  // Standard beginner level
 
 class Minesweeper extends React.Component {
   constructor(props) {
@@ -251,8 +252,8 @@ class Minesweeper extends React.Component {
         onClick={() => this.revealTile(i)}
         onContextMenu={e => this.flagTile(e, i)}
         style={{
-          width: 24,
-          height: 24,
+          width: 30,
+          height: 30,
           background: tile.isRevealed 
             ? '#fff9fb' 
             : tile.isFlagged 
@@ -307,48 +308,33 @@ class Minesweeper extends React.Component {
     
     return (
       <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        padding: '10px',
+        fontFamily: '"Comic Sans MS", "Marker Felt", cursive',
+        maxWidth: '800px',
+        margin: '0 auto',
+        padding: '20px',
+        color: '#ff69b4',
+        textAlign: 'center',
         backgroundColor: '#fff0f5',
-        fontFamily: 'Arial, sans-serif',
-        minHeight: '100vh',
-        boxSizing: 'border-box',
-        overflow: 'auto'
+        borderRadius: '15px',
+        boxShadow: '0 0 20px rgba(255, 105, 180, 0.2)'
       }}>
+        <h1 style={{
+          fontSize: '2.5em',
+          marginBottom: '20px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+          color: '#ff1493',
+          marginTop: '0',
+          letterSpacing: '1px'
+        }}>Minesweeper</h1>
         <div style={{
-          backgroundColor: '#fff9fb',
-          borderRadius: '16px',
-          boxShadow: '0 4px 15px rgba(255, 105, 180, 0.2)',
-          padding: '15px',
-          margin: '10px 0',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
+          justifyContent: 'space-between',
+          marginBottom: '12px',
+          padding: '8px 12px',
+          backgroundColor: '#ffe6f2',
+          borderRadius: '12px',
+          boxShadow: '0 2px 5px rgba(255, 105, 180, 0.1)'
         }}>
-          <h1 style={{
-            textAlign: 'center',
-            color: '#ff69b4',
-            margin: '0 0 15px 0',
-            fontSize: '2em',
-            fontWeight: 'bold',
-            textShadow: '1px 1px 2px rgba(255, 182, 193, 0.5)',
-            letterSpacing: '1px'
-          }}>
-Minesweeper
-          </h1>
-          
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginBottom: '12px',
-            padding: '8px 12px',
-            backgroundColor: '#ffe6f2',
-            borderRadius: '12px',
-            boxShadow: '0 2px 5px rgba(255, 105, 180, 0.1)'
-          }}>
             <div style={{
               background: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
               color: 'white',
